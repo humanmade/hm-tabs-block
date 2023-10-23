@@ -10,5 +10,5 @@ function bootstrap() {
 }
 
 function register_block() {
-	register_block_type( get_parent_theme_file_path( '/blocks/build/tabs-item' ) );
+	register_block_type( plugin_dir_path( dirname( __FILE__, 4 ) .  '/blocks/build/tabs-item/block.json' ) );
 }

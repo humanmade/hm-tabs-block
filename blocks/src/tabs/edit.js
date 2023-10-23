@@ -1,5 +1,5 @@
 import { InnerBlockSlider } from '@humanmade/block-editor-components';
-import { useMemo } from '@wordpress/element';
+import { useMemo, useState } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import {
@@ -47,6 +47,8 @@ function TabEdit( props ) {
 
 	const { updateBlockAttributes } = useDispatch( blockEditorDataStore.name );
 
+	const [ currentItemIndex, setCurrentItemIndex ] = useState( 0 );
+
 	return (
 		<div { ...blockProps }>
 			<InspectorControls>
@@ -67,17 +69,26 @@ function TabEdit( props ) {
 				</PanelBody>
 			</InspectorControls>
 			<div className="hm-tabs__nav">
-				{ itemList.map( ( item ) => (
-					<RichText
-						key={ item.id }
-						tagName="span"
-						className="hm-tabs__nav-button"
-						value={ item.title }
-						onChange={ ( title ) => {
-							updateBlockAttributes( item.id, { title } );
-						} }
-					/>
-				) ) }
+				{ itemList.map( ( item, i ) => {
+					let buttonClassName = 'hm-tabs__nav-button';
+
+					if ( i === currentItemIndex ) {
+						buttonClassName += ' hm-tabs__nav-button--is-active';
+					}
+
+					return (
+						<RichText
+							key={ item.id }
+							tagName="span"
+							className={ buttonClassName }
+							value={ item.title }
+							onChange={ ( title ) => {
+								updateBlockAttributes( item.id, { title } );
+							} }
+							placeholder={ __( 'Tab title…', 'hm-tabs' ) }
+						/>
+					);
+				} ) }
 			</div>
 			{
 				<InnerBlockSlider
@@ -85,6 +96,8 @@ function TabEdit( props ) {
 					className={ 'hm-tabs__content' }
 					slideLimit={ TAB_LIMIT }
 					parentBlockId={ clientId }
+					externalCurrentItemIndex={ currentItemIndex }
+					setExternalCurrentItemIndex={ setCurrentItemIndex }
 				/>
 			}
 		</div>

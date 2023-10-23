@@ -3,7 +3,7 @@
  * Tabs Block.
  */
 
-namespace HM_Tab_Block\Blocks\Tabs;
+namespace HM_Tabs_Block\Blocks\Tabs;
 
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\register_block' );

@@ -18,7 +18,7 @@
  * Domain Path:       /languages
  */
 
-namespace HM_Tab_Block;
+namespace HM_Tabs_Block;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

@@ -1,9 +1,9 @@
 <?php
 /**
- * Tabs Block.
+ * Tab Item Block.
  */
 
-namespace HM_Tab_Block\Blocks\Tabs_Item;
+namespace HM_Tabs_Block\Blocks\Tabs_Item;
 
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\register_block' );

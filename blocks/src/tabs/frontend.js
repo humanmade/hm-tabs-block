@@ -205,4 +205,8 @@ function bootstrap() {
 		.forEach( ( el ) => initTabBlock( el ) );
 }
 
-document.addEventListener( 'DOMContentLoaded', bootstrap );
+if ( document.readyState !== 'loading' ) {
+	bootstrap();
+} else {
+	document.addEventListener( 'DOMContentLoaded', bootstrap );
+}

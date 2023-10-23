@@ -1,0 +1,13 @@
+{
+    "name": "humanmade/hm-tabs-block",
+    "description": "Simple tab block for the WordPress block editor",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Human Made Limited",
+            "email": "hello@humanmade.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,18 @@
+.hm-tabs .inner-block-slider__navigation {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	align-items: center;
+}
+
+.hm-tabs .inner-block-slider__navigation .components-button.is-secondary {
+	border-radius: 2px;
+}
+
+.hm-tabs .inner-block-slider__navigation .components-button.is-not-small {
+	padding: 0 4px;
+	height: 24px;
+	line-height: 22px;
+	min-width: 24px;
+	justify-content: center;
+}

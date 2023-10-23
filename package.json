@@ -1,0 +1,34 @@
+{
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/humanmade/hm-tabs-block/issues"
+  },
+  "description": "Simple tab block for the WordPress block editor. ",
+  "devDependencies": {
+    "@humanmade/block-editor-components": "^0.5.0",
+    "@wordpress/scripts": "^26.15.0"
+  },
+  "homepage": "https://github.com/humanmade/hm-tabs-block#readme",
+  "license": "GPL-2.0-or-later",
+  "name": "hm-tabs-block",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanmade/hm-tabs-block.git"
+  },
+  "scripts": {
+    "build": "wp-scripts build --webpack-src-dir=blocks/src --output-path=blocks/build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format ./**/src",
+    "format:configs": "wp-scripts format ./*.js",
+    "lint": "npm run lint:css; npm run lint:js; npm run lint:php",
+    "lint:css": "wp-scripts lint-style ./**/src/**/*.{css,scss}",
+    "lint:js": "wp-scripts lint-js ./**/src/**/*.js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:php": "composer lint",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start --webpack-src-dir=blocks/src --output-path=blocks/build"
+  },
+  "version": "1.0.0"
+}

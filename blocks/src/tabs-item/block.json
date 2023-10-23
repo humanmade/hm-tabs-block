@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"attributes": {
+		"id": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		}
+	},
+	"description": "Preformatted block grouping for a single tabbed item.",
+	"editorScript": "file:./editor.js",
+	"name": "hm/tabs-item",
+	"parent": [ "hm/tabs" ],
+	"textdomain": "hm-tabs",
+	"title": "Tab Item",
+	"version": "1.0.0"
+}

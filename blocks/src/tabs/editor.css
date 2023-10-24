@@ -3,6 +3,7 @@
 	justify-content: center;
 	gap: 8px;
 	align-items: center;
+	margin: 24px auto;
 }
 
 .hm-tabs .inner-block-slider__navigation .components-button.is-secondary {

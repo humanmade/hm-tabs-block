@@ -28,7 +28,8 @@
     "lint:php": "composer lint",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "packages-update": "wp-scripts packages-update",
-    "start": "wp-scripts start --webpack-src-dir=blocks/src --output-path=blocks/build"
+    "start": "wp-scripts start --webpack-src-dir=blocks/src --output-path=blocks/build",
+    "release": "git fetch && git checkout dist && git reset origin/main --hard && npm run build && git add -f blocks/build && git commit -m 'Update build' && git push -f origin dist && git checkout -"
   },
   "version": "1.0.0"
 }

@@ -16,7 +16,9 @@ function Edit( { attributes, setAttributes, clientId } ) {
 		className: 'hm-tabs-item',
 	} );
 
-	const { children, ...rest } = useInnerBlocksProps( blockProps );
+	const { children, ...rest } = useInnerBlocksProps( blockProps, {
+		template: [ [ "core/paragraph"] ],
+	} );
 
 	// Update the block ID.
 	// Always override saved value to ensure we never have duplicates.

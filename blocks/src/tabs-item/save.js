@@ -15,10 +15,14 @@ function Save( props ) {
 		tabindex: 0,
 	} );
 
+	const innerBlockProps = useInnerBlocksProps.save( {
+		className: 'hm-tabs-item__content',
+	} );
+
 	return (
 		<div { ...blockProps }>
 			<h2 className="hm-tabs-item__title">{ props.attributes.title }</h2>
-			<div { ...useInnerBlocksProps.save() } />
+			<div { ...innerBlockProps } />
 		</div>
 	);
 }

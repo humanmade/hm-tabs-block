@@ -87,7 +87,7 @@ function TabEdit( props ) {
 							} }
 							placeholder={ __( 'Tab title…', 'hm-tabs' ) }
 							onClick={ () => {
-								setExternalCurrentItemIndex( i );
+								setCurrentItemIndex( i );
 							} }
 						/>
 					);

@@ -11,7 +11,7 @@ function bootstrap() {
 }
 
 function register_block() {
-		register_block_type( plugin_dir_path( dirname( __FILE__, 4 ) .  '/blocks/build/tabs/block.json' ) );
+	register_block_type( plugin_dir_path( dirname( __FILE__, 4 ) .  '/blocks/build/tabs/block.json' ) );
 }
 
 function enqueue_scripts() {

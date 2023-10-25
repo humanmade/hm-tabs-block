@@ -55,8 +55,10 @@ function activateTab( tab, blockElement ) {
 	tabPanels.forEach( ( p ) => {
 		if ( p.getAttribute( 'id' ) === panel.getAttribute( 'id' ) ) {
 			p.removeAttribute( 'hidden' );
+			p.classList.add( 'hm-tabs-item--is-active' );
 		} else {
 			p.setAttribute( 'hidden', true );
+			p.classList.remove( 'hm-tabs-item--is-active' );
 		}
 	} );
 
@@ -179,8 +181,10 @@ function initTabBlock( blockElement ) {
 		);
 
 		if ( isActive ) {
+			panel.classList.add( 'hm-tabs-item--is-active' );
 			panel.removeAttribute( 'hidden' );
 		} else {
+			panel.classList.remove( 'hm-tabs-item--is-active' );
 			panel.setAttribute( 'hidden', true );
 		}
 

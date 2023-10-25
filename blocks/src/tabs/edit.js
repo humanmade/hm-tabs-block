@@ -1,4 +1,4 @@
-import { InnerBlockSlider } from '@humanmade/block-editor-components';
+import { InnerBlockSliderStateless } from '@humanmade/block-editor-components';
 import { useMemo, useState } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
@@ -94,13 +94,13 @@ function TabEdit( props ) {
 				} ) }
 			</div>
 			{
-				<InnerBlockSlider
+				<InnerBlockSliderStateless
 					allowedBlock={ ALLOWED_BLOCK }
 					className={ 'hm-tabs__content' }
 					slideLimit={ TAB_LIMIT }
 					parentBlockId={ clientId }
-					externalCurrentItemIndex={ currentItemIndex }
-					setExternalCurrentItemIndex={ setCurrentItemIndex }
+					currentItemIndex={ currentItemIndex }
+					setCurrentItemIndex={ setCurrentItemIndex }
 				/>
 			}
 		</div>

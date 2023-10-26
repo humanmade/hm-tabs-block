@@ -197,6 +197,20 @@ function initTabBlock( blockElement ) {
 		handleKeydown( event, blockElement );
 	} );
 
+	// When the tab block is first scrolled into view, add the class hm-tabs--is-visible
+	const observer = new IntersectionObserver( ( entries ) => {
+		entries.forEach( ( entry ) => {
+			if ( entry.isIntersecting ) {
+				window.setTimeout( () => {
+					entry.target.classList.add( 'hm-tabs--is-visible' );
+				}, 250 );
+				observer.unobserve( entry.target ); // Optional, if you only want it to happen once
+			}
+		} );
+	} );
+
+	observer.observe( blockElement );
+
 	blockElement.classList.add( 'hm-tabs--is-initalized' );
 }
 

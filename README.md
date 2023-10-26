@@ -39,18 +39,23 @@ Here is a sample of the markup to show the classes you can use to style the tabs
 </div>
 ```
 
+### Example styling
+
 And here's some CSS to style up some nice old school looking tabs.
 
 ```css
 .hm-tabs__nav {
 	display: flex;
+	position: relative;
+	z-index: 1;
+	margin: 0 0 -1px 0;
 }
 
 .hm-tabs__nav-button {
 	background-color: #ddd;
 	border: 1px solid #aaa;
 	padding: 12px 16px;
-	margin: 0 0 -1px 0;
+	margin: 0;
 	font-size: 12px;
 }
 
@@ -68,4 +73,87 @@ And here's some CSS to style up some nice old school looking tabs.
 	border: 1px solid #aaa;
 	padding: 16px;
 }
+```
+
+### Some useful classes for styling and animation.
+
+* `.hm-tabs--is-initialized` Added once JS has initialized the tab functionality.
+* `.hm-tabs--is-visible` Added when the tab if first scrolled into view.
+* `.hm-tabs--is-focused`` Added when a tab is active.
+* `.hm-tabs-item--is-active` Added when the tab is shown and removed after.
+
+### Example of animation
+
+Use this in addition to the styles above to create a slide/fade effect when switching tabs
+
+```
+@keyframes testFadeInLeft {
+	from {
+		visibility: hidden;
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	1% {
+		visibility: visible;
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+}
+
+@keyframes testFadeOutRight {
+	from {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	99% {
+		visibility: visible;
+	}
+
+	to {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+		visibility: hidden;
+	}
+}
+
+.hm-tabs__content {
+	position: relative;
+	display: grid;
+	overflow: hidden;
+
+	.hm-tabs-item {
+		grid-column: 1;
+		grid-row: 1;
+
+		&[hidden="true"] {
+			display: block;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+.hm-tabs-item {
+	position: relative;
+
+	&:not(.hm-tabs-item--is-active) {
+		animation-duration: 0.25s;
+		animation-name: testFadeOutRight;
+	}
+
+	&--is-active {
+		opacity: 1;
+		animation-duration: 0.25s;
+		animation-name: testFadeInLeft;
+	}
+}
+
 ```

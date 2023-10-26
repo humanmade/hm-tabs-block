@@ -13,14 +13,14 @@ import './frontend.css';
  * @param {HTMLElement} blockElement Tab block element.
  */
 function activateTab( tab, blockElement ) {
-	blockElement.classList.add( 'hm-tabs--focused' );
+	blockElement.classList.add( 'hm-tabs--is-focused' );
 
 	const handleClickOutside = ( event ) => {
 		if (
 			event.target !== blockElement &&
 			! blockElement.contains( event.target )
 		) {
-			blockElement.classList.remove( 'hm-tabs--focused' );
+			blockElement.classList.remove( 'hm-tabs--is-focused' );
 			document.removeEventListener( 'click', handleClickOutside );
 		}
 	};
@@ -102,7 +102,7 @@ function handleKeydown( e, blockElement ) {
 	nextTabIndex = Math.min( Math.max( nextTabIndex, 0 ), tabs.length );
 
 	if ( nextTabIndex !== currentTabIndex ) {
-		activateTab( tabs[ nextTabIndex ] );
+		activateTab( tabs[ nextTabIndex ], blockElement );
 		tabs[ currentTabIndex ].blur();
 		tabs[ nextTabIndex ].focus();
 	}

@@ -5,7 +5,7 @@
   },
   "description": "Simple tab block for the WordPress block editor. ",
   "devDependencies": {
-    "@humanmade/block-editor-components": "^0.6.0",
+    "@humanmade/block-editor-components": "^0.6.1",
     "@wordpress/scripts": "^26.15.0"
   },
   "homepage": "https://github.com/humanmade/hm-tabs-block#readme",

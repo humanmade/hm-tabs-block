@@ -147,6 +147,12 @@ function createTabs( blockElement ) {
  * @param {HTMLElement} blockElement Tab block.
  */
 function initTabBlock( blockElement ) {
+	// TODO: Re-use placeholder navigation elements instead of replacing.
+	const placeholderNav = blockElement.querySelector( '.hm-tabs__nav' );
+	if ( placeholderNav ) {
+		placeholderNav.parentNode.removeChild(  placeholderNav );
+	}
+
 	const tabsListElement = document.createElement( 'div' );
 	tabsListElement.classList.add( 'hm-tabs__nav' );
 	tabsListElement.setAttribute( 'role', 'tablist' );

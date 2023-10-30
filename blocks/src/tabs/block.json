@@ -13,7 +13,7 @@
 	"icon": "block-default",
 	"keywords": [ "tabbed", "tabbed-content", "tabs" ],
 	"name": "hm/tabs",
-    "render": "file:./render.php",
+	"render": "file:./render.php",
 	"script": "file:./frontend.js",
 	"supports": {
 		"align": [ "full", "wide" ],

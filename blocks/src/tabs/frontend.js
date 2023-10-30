@@ -4,8 +4,6 @@
  * Adapted from the code provided on https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role
  */
 
-import './frontend.css';
-
 /**
  * Change to tabs.
  *

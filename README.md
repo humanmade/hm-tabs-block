@@ -23,7 +23,7 @@ The tabs are functional but unstyled.
 Here is a sample of the markup to show the classes you can use to style the tabs.
 
 ```html
-<div class="hm-tabs hm-tabs--is-initalized">
+<div class="hm-tabs hm-tabs--is-initialized">
     <div class="hm-tabs__nav" role="tablist">
         <button class="hm-tabs__nav-button hm-tabs__nav-button--is-active">Tab 1</button>
         <button class="hm-tabs__nav-button">Tab 2</button>

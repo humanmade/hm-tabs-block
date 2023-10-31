@@ -215,7 +215,7 @@ function initTabBlock( blockElement ) {
 
 	observer.observe( blockElement );
 
-	blockElement.classList.add( 'hm-tabs--is-initalized' );
+	blockElement.classList.add( 'hm-tabs--is-initialized' );
 }
 
 /**

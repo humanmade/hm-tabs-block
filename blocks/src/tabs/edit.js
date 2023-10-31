@@ -77,19 +77,19 @@ function TabEdit( props ) {
 					}
 
 					return (
-						<RichText
-							key={ item.id }
-							tagName="span"
+						<button
 							className={ buttonClassName }
-							value={ item.title }
-							onChange={ ( title ) => {
-								updateBlockAttributes( item.id, { title } );
-							} }
-							placeholder={ __( 'Tab title…', 'hm-tabs' ) }
-							onClick={ () => {
-								setCurrentItemIndex( i );
-							} }
-						/>
+							key={ item.id }
+						>
+							<RichText
+								tagName="span"
+								value={ item.title }
+								onChange={ ( title ) => {
+									updateBlockAttributes( item.id, { title } );
+								} }
+								placeholder={ __( 'Tab title…', 'hm-tabs' ) }
+							/>
+						</button>
 					);
 				} ) }
 			</div>

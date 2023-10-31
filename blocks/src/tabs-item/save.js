@@ -10,9 +10,6 @@ function Save( props ) {
 	const blockProps = useBlockProps.save( {
 		className: 'hm-tabs-item',
 		id: `hm-tabs-item-${ props.attributes.id }`,
-		role: 'tabpanel',
-		'aria-labelledby': `hm-tabs-nav-${ props.attributes.id }`,
-		tabindex: 0,
 	} );
 
 	const innerBlockProps = useInnerBlocksProps.save( {

@@ -10,7 +10,6 @@ import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 function Save( { attributes } ) {
 	const blockProps = useBlockProps.save( {
 		className: 'hm-tabs',
-		'data-tablist-container-id': attributes.tablistContainerId,
 	} );
 
 	const innerBlocksProps = useInnerBlocksProps.save( {

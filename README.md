@@ -10,6 +10,12 @@ Performance is also important. The JS is lightweight and has no dependencies.
 
 The tabs block is made up of 2 blocks. A container tabs block, and a child tabs-item block. The tabs item block is simply a wrapper, allowing you to add any content you wish.
 
+## Saved markup.
+
+One of the aims of this block is to keep the markup very minimal. Something that will work even if this plugin is deactivated.
+
+All of the functionality and interactive elements are created on the fly either rendered server side or constructed in JS.
+
 ## Styling the tabs.
 
 The tabs are functional but unstyled.

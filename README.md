@@ -12,7 +12,7 @@ The tabs block is made up of 2 blocks. A container tabs block, and a child tabs-
 
 ## Saved markup.
 
-One of the aims of this block is to keep the markup very minimal. Something that will work even if this plugin is deactivated.
+One of the aims of this block is to keep the saved HTML really minimal. It should look OK even if this plugin is deactivated.
 
 All of the functionality and interactive elements are created on the fly either rendered server side or constructed in JS.
 

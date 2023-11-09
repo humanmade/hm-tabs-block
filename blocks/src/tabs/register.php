@@ -15,5 +15,5 @@ function register_block() {
 }
 
 function enqueue_scripts() {
-	wp_script_add_data( 'yell-tabs-script', 'strategy', 'async' );
+	wp_script_add_data( 'hm-tabs-script', 'strategy', 'async' );
 }

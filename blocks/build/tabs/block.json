@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "attributes": {
+    "tablistContainerId": {
+      "type": "string"
+    }
+  },
+  "category": "design",
+  "description": "Preformatted block grouping for a tabbed layout block.",
+  "editorScript": "file:./editor.js",
+  "editorStyle": "file:./editor.css",
+  "icon": "block-default",
+  "keywords": [
+    "tabbed",
+    "tabbed-content",
+    "tabs"
+  ],
+  "name": "hm/tabs",
+  "render": "file:./render.php",
+  "script": "file:./frontend.js",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "spacing": {
+      "margin": true
+    }
+  },
+  "textdomain": "hm-tabs",
+  "title": "Tabs",
+  "version": "1.0.0"
+}

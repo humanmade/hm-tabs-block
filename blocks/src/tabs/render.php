@@ -2,16 +2,16 @@
 
 // Load block content into dom document.
 $dom = new DOMDocument;
-libxml_use_internal_errors(true);
-$dom->loadHTML( $content );
+libxml_use_internal_errors( true );
+$dom->loadHTML( '<meta charset="utf-8">' . $content );
 libxml_clear_errors();
 
-$xpath = new DOMXPath($dom);
+$xpath = new DOMXPath( $dom );
 
 // Create tablist container div.
-$tablist_element = $dom->createElement('div');
-$tablist_element->setAttribute('class', 'hm-tabs__nav');
-$tablist_element->setAttribute('role', 'tablist');
+$tablist_element = $dom->createElement( 'div' );
+$tablist_element->setAttribute( 'class', 'hm-tabs__nav' );
+$tablist_element->setAttribute( 'role', 'tablist' );
 
 // Append a tab button for each tab item.
 $tab_title_elements = $xpath->query( '//h2[contains(@class, "hm-tabs-item__title")]' );
@@ -28,7 +28,7 @@ foreach ( $tab_title_elements as $i => $tab_title_element ) {
 }
 
 // Prepend tab list to top of tab block.
-$tab_block_element = $xpath->query( '//div[contains(@class, "hm-tabs")][1]')->item(0);
+$tab_block_element = $xpath->query( '//div[contains(@class, "hm-tabs")][1]' )->item( 0 );
 $tab_block_element->insertBefore( $tablist_element, $tab_block_element->firstChild );
 
 // Maybe add tablist container id data attribute.
@@ -37,6 +37,5 @@ if ( ! empty( $attributes['tablistContainerId'] ) ) {
 }
 
 // Output modified HTML.
-echo $dom->saveHTML(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
-?>
+// doc > html > head + body > block
+echo $dom->saveHTML( $dom->documentElement->firstElementChild->nextSibling->firstChild ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

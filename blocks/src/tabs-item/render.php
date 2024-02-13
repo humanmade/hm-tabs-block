@@ -13,4 +13,3 @@ if ( $p->next_tag( [ 'tag_name' => 'h2', 'class_name' => 'hm-tabs-item__title' ]
 }
 
 echo $p->get_updated_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-?>
